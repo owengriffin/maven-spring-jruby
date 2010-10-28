@@ -11,8 +11,10 @@
 	<!-- <lang:property name="name" value="Ruby Parlour" /> -->
 	<!-- </lang:jruby> -->
 
+<bean id="boom" class="com.owengriffin.Boom"/>
 
-	<lang:jruby name="jrubyGreeter" id="jrubyhello" script-interfaces="com.owengriffin.Greeter"
+
+	<lang:jruby name="jrubyGreeter" id="jrubyhello"  script-interfaces="com.owengriffin.Greeter"
 		script-source="classpath:jruby_hello.rb">
 		<lang:property name="name" value="Ruby Parlour" />
 	</lang:jruby>
