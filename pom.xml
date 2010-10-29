@@ -3,17 +3,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.owengriffin</groupId>
-  <artifactId>jruby-experiments</artifactId>
+  <artifactId>maven-spring-jruby</artifactId>
+  <name>Maven Spring JRuby Experiments</name>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>jruby-experiments</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-  	<module>jruby-complete</module>
+  	<module>jruby-custom</module>
+  	<module>jruby-gems</module>
+  	<module>spring-helloworld</module>
   </modules>
 </project>

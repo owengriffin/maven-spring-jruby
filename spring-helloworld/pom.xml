@@ -2,37 +2,23 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.owengriffin</groupId>
-	<artifactId>spring-jruby-hello</artifactId>
+	<artifactId>spring-helloworld</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>spring-jruby-hello</name>
+	<name>Spring Hello World</name>
 	<url>http://maven.apache.org</url>
 
- <parent>
-    <artifactId>jruby-experiments</artifactId>
-    <groupId>com.owengriffin</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<artifactId>maven-spring-jruby</artifactId>
+		<groupId>com.owengriffin</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 	<properties>
-		<jruby.version>1.5.2</jruby.version>
-		<jruby.home>${user.home}/.rvm/rubies/jruby-${jruby.version}</jruby.home>
 		<spring.version>3.0.5.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<version>1.1</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -62,24 +48,40 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.owengriffin</groupId>
-			<artifactId>jruby-custom</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
 			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.1</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 			<type>jar</type>
-			<scope>compile</scope>
+			<scope>test</scope>
 		</dependency>
+
+		<!-- Customised version of JRuby JAR which contains our required Gems -->
 		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>2.2</version>
+			<groupId>com.owengriffin</groupId>
+			<artifactId>jruby-custom</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -95,7 +97,6 @@
 				<filtering>true</filtering>
 			</testResource>
 		</testResources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -103,21 +104,6 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>java</goal>
-						</goals>
-					</execution>
-				</executions>
-
-				<configuration>
-					<mainClass>com.owengriffin.App</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
