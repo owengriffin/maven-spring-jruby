@@ -11,7 +11,7 @@
 	<groupId>com.owengriffin</groupId>
 	<artifactId>jruby-custom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jruby-custom</name>
+	<name>A customised JRuby</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
