@@ -2,6 +2,8 @@
 
 This is the code from a few JRuby, Maven and Spring experiments I've been doing over the last few days.
 
+The following is a copy from my blog post at [owengriffin.com](http://www.owengriffin.com/posts/2010/10/29/Maven,%20Spring,%20JRuby%20and%20Gems.md.html).
+
 Spring has Dynamic Language support, which allows you to write beans in languages which can execute on the Java Virtual Machine (JVM). I've been experimenting with using JRuby to write beans in Ruby.
 
 You can find an simple example of embedding Ruby in a Spring application within the _spring-helloworld_ Maven project.
@@ -34,11 +36,11 @@ JRuby uses the Java property `jruby.home` to point to it's Ruby environment. By 
     
 This isn't a good idea because it still relies on the the alternative JRuby environment to have the Gems installed. It also relies on that environment to be consistent across all the machines you deploy the application.
 
-However it is the easiest solution, and you benefit from using Ruby-ish tools such as RVM.
+However it is the easiest solution, and you benefit from using Ruby-ish tools such as [RVM](http://rvm.beginrescueend.com/).
 
 ## Corrupting the JRuby artifact
 
-An alternative is to install the JRuby gems onto the JRuby artifact, re-name it and package the new modified-JRuby JAR with your application. This is the approach which I've settled for.
+An alternative is to install the JRuby gems onto the JRuby artifact, re-name it and package the new modified-JRuby JAR with your application. This is the approach which I've settled for. I got this idea from [Nick Seiger](http://blog.nicksieger.com/articles/2009/01/10/jruby-1-1-6-gems-in-a-jar) in his post [JRuby 1.16: Gems in a jar](http://blog.nicksieger.com/articles/2009/01/10/jruby-1-1-6-gems-in-a-jar)
 
 This project is contains 3 projects:
 
