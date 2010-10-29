@@ -7,15 +7,8 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 	http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.0.xsd">
 
-	<!--<lang:jruby id="jrubyhello" script-source="classpath:say_hello.rb" script-interfaces="com.owengriffin.Greeter"> -->
-	<!-- <lang:property name="name" value="Ruby Parlour" /> -->
-	<!-- </lang:jruby> -->
-
-
 	<lang:jruby name="jrubyGreeter" id="jrubyhello"  script-interfaces="com.owengriffin.Greeter"
-		script-source="classpath:jruby_hello.rb">
-		<lang:property name="name" value="Ruby Parlour" />
-	</lang:jruby>
+		script-source="classpath:jruby_hello.rb"/>
 
 	<bean name="javaGreeter" id="hello" class="com.owengriffin.SayHello">
 		<property name="name" value="Pookey" />

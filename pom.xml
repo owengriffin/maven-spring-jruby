@@ -17,5 +17,6 @@
   	<module>jruby-custom</module>
   	<module>jruby-gems</module>
   	<module>spring-helloworld</module>
+  	<module>spring-gems</module>
   </modules>
 </project>
